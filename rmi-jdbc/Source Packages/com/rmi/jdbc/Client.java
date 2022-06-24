@@ -8,13 +8,10 @@ import java.util.Scanner;
 
 public class Client {
 
-	public static void main(String[] args) throws RemoteException,
-			NotBoundException {
+	@SuppressWarnings("rawtypes")
+	public static void main(String[] args) throws RemoteException, NotBoundException, Exception {
 
-		// Registry registry = LocateRegistry.getRegistry("localhost",
-		// Registry.REGISTRY_PORT);
-		//
-		// JdbcService jdbcService = (JdbcService) registry.lookup("db");
+		JdbcService jdbcService = (JdbcService) Naming.lookup("rmi://localhost:4000/db");
 
 		Scanner sc = new Scanner(System.in);
 
@@ -32,13 +29,7 @@ public class Client {
 			try {
 				int id;
 				String name, gender;
-				JdbcService jdbcService = (JdbcService) Naming
-						.lookup("rmi://localhost:4000/db");
-				// Registry registry = LocateRegistry.getRegistry("localhost",
-				// Registry.REGISTRY_PORT);
-				//
-				// JdbcService jdbcService = (JdbcService)
-				// registry.lookup("db");
+				jdbcService = (JdbcService) Naming.lookup("rmi://localhost:4000/db");
 
 				System.out.println("Enter ID : ");
 				id = sc.nextInt();
@@ -57,13 +48,7 @@ public class Client {
 		case 2:
 			try {
 				int id;
-				JdbcService jdbcService = (JdbcService) Naming
-						.lookup("rmi://localhost:4000/db");
-				// Registry registry = LocateRegistry.getRegistry("localhost",
-				// Registry.REGISTRY_PORT);
-				//
-				// JdbcService jdbcService = (JdbcService)
-				// registry.lookup("db");
+				jdbcService = (JdbcService) Naming.lookup("rmi://localhost:4000/db");
 
 				System.out.println("Enter ID : ");
 				id = sc.nextInt();
@@ -79,13 +64,7 @@ public class Client {
 			try {
 				int id;
 				String name, gender;
-				JdbcService jdbcService = (JdbcService) Naming
-						.lookup("rmi://localhost:4000/db");
-				// Registry registry = LocateRegistry.getRegistry("localhost",
-				// Registry.REGISTRY_PORT);
-				//
-				// JdbcService jdbcService = (JdbcService)
-				// registry.lookup("db");
+				jdbcService = (JdbcService) Naming.lookup("rmi://localhost:4000/db");
 
 				System.out.println("Enter ID : ");
 				id = sc.nextInt();
@@ -104,13 +83,7 @@ public class Client {
 		case 4:
 			try {
 				int id;
-				JdbcService jdbcService = (JdbcService) Naming
-						.lookup("rmi://localhost:4000/db");
-				// Registry registry = LocateRegistry.getRegistry("localhost",
-				// Registry.REGISTRY_PORT);
-				//
-				// JdbcService jdbcService = (JdbcService)
-				// registry.lookup("db");
+				jdbcService = (JdbcService) Naming.lookup("rmi://localhost:4000/db");
 
 				System.out.println("Enter ID : ");
 				id = sc.nextInt();
@@ -124,6 +97,7 @@ public class Client {
 			break;
 		default:
 			System.out.println("Wrong choice");
+			System.exit(0);
 		}
 
 		sc.close();

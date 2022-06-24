@@ -1,0 +1,6 @@
+create database jdbc_db;
+use jdbc_db;
+show tables;
+create table student (id int,name varchar(20),gender varchar(6));
+insert into student values (1,'rishabh','male');
+select * from student;
