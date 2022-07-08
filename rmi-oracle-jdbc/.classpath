@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/55683/Downloads/slf4j-api-1.7.36.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/55683/Downloads/ojdbc6-11.2.0.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

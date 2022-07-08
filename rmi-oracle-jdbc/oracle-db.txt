@@ -1,0 +1,47 @@
+<----------------- Oracle 21c Installing and using in command prompt ---------------->
+
+Step 1: Download and installing - https://www.oicbasics.com/2020/01/download-oracle-database-11g-xe-express.html (for oracle 11g-express-edition)
+
+Step 2: open "run sql command line" in start menu
+
+Step 3: start server using command - "connect system" and give password which you give at the time of installation-of-oracle-11g-express-edition and then it will connect
+
+Step 4: open oracle 11g XE application direct and it will open in browser
+
+Step 5: documentation of oracle 11g : https://docs.oracle.com/cd/E17781_01/admin.112/e18585/toc.htm#XEGSG122
+
+Step 6: first create user and password then create table
+
+command : create table student (id int, name varchar2(20), gender varchar2(20));
+command : describe student;
+command : insert into student (id, name, gender) values (1, 'rishabh', 'male');
+command : select * from student order by id asc;
+command : select * from student order by id desc;
+command : select * from student;
+
+command : create table college (id int, name varchar2(20), university varchar2(20));
+command : desc college;
+command : alter table college rename column id to collegeid;
+command : alter table college rename column name to collegename;
+command : insert into college values (1, 'PSIT', 'AKTU');
+command : select * from college;
+
+/* Creating Procedure */
+
+CREATE OR REPLACE Procedure insertcollege(ids IN int, names IN varchar2, universityname IN varchar2)
+
+IS
+
+BEGIN
+	INSERT INTO college (collegeid,collegename,university) VALUES (ids,names,universityname);
+        COMMIT;
+
+END;
+
+/* Dropping Procedure */
+drop procedure insertcollege;
+
+/* Calling Procedure */
+begin
+insertcollege(1,'vikas','csjmu');
+end;
